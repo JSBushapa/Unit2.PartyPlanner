@@ -1,10 +1,24 @@
-State
-const events = []
+//State
+let events = []
 
 // render 
 
 async function render() {
+    // assign async function to state
     events = await getEvents() // use async & await because is callHeroku is an async function
+    const eventsElement = document.getElementById('events')
+    const eventCards = events.map((event) => {
+        console.log('event', event)
+        const eventCard = document.createElement('li')
+        eventCard.innerHTML = `
+
+        `
+    })
+
+
+
+
+
 }
 render()
 
@@ -17,13 +31,14 @@ async function getEvents() { //async function
         const response = await fetch(API_URL)
     const json = await response.json()
 
-    // console.log('Properties: ', json.data)
+    console.log('Properties: ', json.data)
     // returns the data properties of json object
-   return json.data
+//    return json.data
     } catch (error) {
         console.error(error)
     }
 }
 
 getEvents()
+
 //event listener
