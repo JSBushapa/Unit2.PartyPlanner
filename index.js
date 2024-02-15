@@ -49,7 +49,7 @@ async function getEvents() { //async function
 
 }
 
-render()
+renderEvent()
 
 
 
@@ -57,7 +57,7 @@ async function startApp() {
     events = await getEvents() 
     console.log(events.data)
 
-    render()
+    renderEvent()
 }
 startApp()
 
